@@ -1,0 +1,45 @@
+import random
+import sys
+import os
+
+
+food_suggestion = ['Burgers', 'Spagetti', 'BBQ_chicken', 'Rice', 'Sandwiches',
+                   'Breakfast', 'Pizza', 'Roast_dinner', 'Fajitas', 'Tacos', 'Noodles']
+
+dessert_suggestion = ["Cake_and_Cream", "Ice_cream",
+                      "Chocolate", "Apple_pie_with_custard", "Crisps"]
+
+healthy_option = ["Popcorn", "A_protein_shake_with_fruit",
+                  "Fruit_salad", "low_fat_Ice_cream"]
+
+food_choice = random.choice(food_suggestion)
+dessert_choice = random.choice(dessert_suggestion)
+healthy_dessert = random.choice(healthy_option)
+
+
+name = input("What is you name?  ")
+print("Hello " + name)
+
+os.system("clear")
+
+print("You know what {}, choosing something to eat can be a litte fustrating.\n I'll suggest something for you" .format(name))
+
+print("How about... " + food_choice)
+print("")
+print("Well since you're having {} " .format(food_choice))
+print("")
+print("How about some dessert?")
+yes_no = input("--> ").lower()
+if yes_no == "yes":
+    print("Sensational! Let me recommend something \n hmmmmmm... How about some {}" .format(
+        dessert_choice))
+    if dessert_choice == "Ice_cream":
+        print("Ben & Jerry's come out on top but you can never go wrong with a twister")
+    elif dessert_choice == "Chocolate":
+        print("Lion bars are back in style! But anything made cadbury's should be good... Not dark chocolate though... never go with the dark chocolate")
+    elif dessert_choice == "Crisps":
+        print("I'd be lying if i said pringles aren't the go to.. but walkers are solid... if you're feeling groovy try something new and let me know ")
+
+
+elif yes_no == "no":
+    print("You know what? Kudos to you for choosing to be healthy!\n But you should cut back once in a while too... \n Here's a healthy option in case you change your mind... {}" .format(healthy_dessert))
